@@ -9,6 +9,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { Monitor } from "lucide-react";
 
 const signUpSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -64,9 +65,14 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-12">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 px-4 py-12">
       <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
+        <CardHeader className="space-y-4 text-center">
+          <div className="flex justify-center">
+            <div className="flex items-center justify-center w-16 h-16 bg-primary rounded-lg">
+              <Monitor className="w-8 h-8 text-primary-foreground" />
+            </div>
+          </div>
           <CardTitle className="text-2xl font-bold">Create an account</CardTitle>
           <CardDescription>
             Enter your information to create your WorkConnect account
