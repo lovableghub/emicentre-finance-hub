@@ -10,6 +10,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { Monitor } from "lucide-react";
 
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -60,8 +61,13 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-12">
       <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">Login</CardTitle>
+        <CardHeader className="space-y-4 text-center">
+          <div className="flex justify-center">
+            <div className="flex items-center justify-center w-16 h-16 bg-primary rounded-lg">
+              <Monitor className="w-8 h-8 text-primary-foreground" />
+            </div>
+          </div>
+          <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
           <CardDescription>
             Enter your email and password to access your account
           </CardDescription>
